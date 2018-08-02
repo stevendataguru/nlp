@@ -89,7 +89,9 @@ with open('tfidfmodel.pickle','wb') as f:
     
     
     
-    
+from sklearn import metrics
+metrics.accuracy_score(sent_test,sent_pred)
+
 sample=['This movive is good']
 sample=vectorizer.transform(sample).toarray()
 classifier.predict(sample)
