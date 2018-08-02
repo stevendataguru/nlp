@@ -86,3 +86,10 @@ with open('classifier.pickle','wb') as f:
 # Saving the Tf-Idf model
 with open('tfidfmodel.pickle','wb') as f:
     pickle.dump(vectorizer,f)
+    
+    
+    
+    
+sample=['This movive is good']
+sample=vectorizer.transform(sample).toarray()
+classifier.predict(sample)
