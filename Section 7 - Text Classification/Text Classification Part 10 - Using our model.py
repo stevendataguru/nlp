@@ -12,21 +12,21 @@ nltk.download('stopwords')
 
 # Importing the dataset
 reviews = load_files('txt_sentoken/')
-X,y = reviews.data,reviews.target
+A,B = reviews.data,reviews.target
 
 
 # Pickling the dataset
-with open('X.pickle','wb') as f:
-    pickle.dump(X,f)
+with open('A.pickle','wb') as f:
+    pickle.dump(A,f)
     
-with open('y.pickle','wb') as f:
-    pickle.dump(y,f)
+with open('B.pickle','wb') as f:
+    pickle.dump(B,f)
 
 # Unpickling dataset
-X_in = open('X.pickle','rb')
-y_in = open('y.pickle','rb')
-X = pickle.load(X_in)
-y = pickle.load(y_in)
+A_in = open('A.pickle','rb')
+B_in = open('B.pickle','rb')
+A = pickle.load(A_in)
+B = pickle.load(B_in)
 
 
 # Creating the corpus
@@ -71,7 +71,7 @@ logmodel = LogisticRegression()
 logmodel.fit(X_train, y_train)
 
 
-predictions = logmodel.predict(Xtest)
+predictions = logmodel.predict(X_test)
 
 # Testing model performance
 from sklearn.metrics import classification_report
