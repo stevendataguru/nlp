@@ -75,8 +75,14 @@ classifier.fit(text_train,sent_train)
 sent_pred = classifier.predict(text_test)
 
 
+from sklearn.metrics import classification_report
+print(classification_report(sent_test,sent_pred))
+print("\n")
 from sklearn.metrics import confusion_matrix
-cm = confusion_matrix(sent_test, sent_pred)
+print(confusion_matrix(sent_test,sent_pred))
+print("\n")
+from sklearn import metrics
+print (metrics.accuracy_score(sent_test,sent_pred))
 
 
 # Saving our classifier
