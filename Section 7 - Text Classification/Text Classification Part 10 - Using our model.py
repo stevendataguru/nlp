@@ -67,22 +67,21 @@ text_train, text_test, sent_train, sent_test = train_test_split(X, y, test_size 
 
 # Training the classifier
 from sklearn.linear_model import LogisticRegression
-classifier = LogisticRegression()
-classifier.fit(text_train,sent_train)
+logmodel = LogisticRegression()
+logmodel.fit(X_train, y_train)
 
+
+predictions = logmodel.predict(Xtest)
 
 # Testing model performance
-sent_pred = classifier.predict(text_test)
-
-
 from sklearn.metrics import classification_report
-print(classification_report(sent_test,sent_pred))
+print(classification_report(y_test,predictions))
 print("\n")
 from sklearn.metrics import confusion_matrix
-print(confusion_matrix(sent_test,sent_pred))
+print(confusion_matrix(y_test,predictions))
 print("\n")
 from sklearn import metrics
-print (metrics.accuracy_score(sent_test,sent_pred))
+print (metrics.accuracy_score(y_test,predictions))
 
 
 # Saving our classifier
