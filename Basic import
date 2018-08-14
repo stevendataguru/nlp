@@ -1,2 +1,5 @@
 train1=pd.read_csv('C:\\Users\shuang\\Desktop\\New folder\\labeledTrainData.tsv', header=0, \
                     delimiter="\t", quoting=3)
+##Here, "header=0" indicates that the first line of the file contains column names, 
+##3"delimiter=\t" indicates that the fields are separated by tabs, 
+##and quoting=3 tells Python to ignore doubled quotes, otherwise you may encounter errors trying to read the file.
