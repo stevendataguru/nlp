@@ -1,0 +1,2 @@
+train1=pd.read_csv('C:\\Users\shuang\\Desktop\\New folder\\labeledTrainData.tsv', header=0, \
+                    delimiter="\t", quoting=3)
