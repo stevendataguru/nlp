@@ -31,7 +31,7 @@ y = pickle.load(y_in)
 
 # Creating the corpus
 corpus = []
-for i in range(0, 2000):
+for i in range(0, len(X)):
     review = re.sub(r'\W', ' ', str(X[i]))
     review = review.lower()
     review = re.sub(r'^br$', ' ', review)
