@@ -62,7 +62,7 @@ X = vectorizer.fit_transform(corpus).toarray()
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
-text_train, text_test, sent_train, sent_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
 
 # Training the classifier
