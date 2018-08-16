@@ -39,6 +39,11 @@ for i in range(0, len(X)):
     review = re.sub(r'\s+[a-z]\s+', ' ',review)
     review = re.sub(r'^b\s+', '', review)
     review = re.sub(r'\s+', ' ', review)
+    ##
+    review = re.sub(r'name+', ' ', review) #no name
+    review = re.sub(r'\id+', ' ', review) #no id
+    review = re.sub(r'\d','',review) #no number ****
+    ##
     corpus.append(review)    
         
 
