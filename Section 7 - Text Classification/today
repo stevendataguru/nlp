@@ -75,7 +75,9 @@ for i in range(0, len(e)):
     review = re.sub(r'\s+', ' ', review)
     review = re.sub(r'name+', ' ', review)
     review = re.sub(r'iso+', ' ', review)
+    review = re.sub(r'[@#_\.\']',' ', review)
     review = re.sub(r'\d','',review)
+    eview = re.sub(r'\b\w\b','',review)
     E.append(review) 
     
 F = []
@@ -88,6 +90,8 @@ for i in range(0, len(f)):
     review = re.sub(r'^b\s+', '', review)
     review = re.sub(r'\s+', ' ', review)
     review = re.sub(r'name+', ' ', review)
-    review = re.sub(r'^\[iso]+', ' ', review)
+    review = re.sub(r'iso+', ' ', review)
+    review = re.sub(r'[@#_\.\']',' ', review)
     review = re.sub(r'\d','',review)
+    review = re.sub(r'\b\w\b','',review)
     F.append(review) 
