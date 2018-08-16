@@ -43,6 +43,7 @@ for i in range(0, len(X)):
     review = re.sub(r'name+', ' ', review) #no name
     review = re.sub(r'\id+', ' ', review) #no id
     review = re.sub(r'\d','',review) #no number ****
+    review = re.sub(r'[@#_\.\']',' ', review) ##symbols
     ##
     corpus.append(review)    
         
