@@ -1,0 +1,93 @@
+df1=pd.read_csv("C:\\Users\\steven\\Desktop\\tmdb_5000_movies.csv")
+df2=pd.read_csv("C:\\Users\\steven\\Desktop\\tmdb_5000_credits.csv")
+
+df1.columns
+
+a=df1['genres']
+b=df1['keywords']
+c=df1['production_companies']
+d=df1['overview']
+e=df1['production_countries']
+f=df1['spoken_languages']
+
+
+A = []
+for i in range(0, len(a)):
+    review = re.sub(r'\W', ' ', str(a[i]))
+    review = review.lower()
+    review = re.sub(r'^br$', ' ', review)
+    review = re.sub(r'\s+br\s+',' ',review)
+    review = re.sub(r'\s+[a-z]\s+', ' ',review)
+    review = re.sub(r'^b\s+', '', review)
+    review = re.sub(r'\s+', ' ', review)
+    review = re.sub(r'name+', ' ', review)
+    review = re.sub(r'\id+', ' ', review)
+    review = re.sub(r'\d','',review)
+    A.append(review) 
+    
+B = []
+for i in range(0, len(b)):
+    review = re.sub(r'\W', ' ', str(b[i]))
+    review = review.lower()
+    review = re.sub(r'^br$', ' ', review)
+    review = re.sub(r'\s+br\s+',' ',review)
+    review = re.sub(r'\s+[a-z]\s+', ' ',review)
+    review = re.sub(r'^b\s+', '', review)
+    review = re.sub(r'\s+', ' ', review)
+    review = re.sub(r'name+', ' ', review)
+    review = re.sub(r'\id+', ' ', review)
+    review = re.sub(r'\d','',review)
+    B.append(review) 
+    
+C = []
+for i in range(0, len(c)):
+    review = re.sub(r'\W', ' ', str(c[i]))
+    review = review.lower()
+    review = re.sub(r'^br$', ' ', review)
+    review = re.sub(r'\s+br\s+',' ',review)
+    review = re.sub(r'\s+[a-z]\s+', ' ',review)
+    review = re.sub(r'^b\s+', '', review)
+    review = re.sub(r'\s+', ' ', review)
+    review = re.sub(r'name+', ' ', review)
+    review = re.sub(r'\id+', ' ', review)
+    review = re.sub(r'\d','',review)
+    C.append(review) 
+    
+D = []
+for i in range(0, len(d)):
+    review = re.sub(r'\W', ' ', str(d[i]))
+    review = review.lower()
+    review = re.sub(r'^br$', ' ', review)
+    review = re.sub(r'\s+br\s+',' ',review)
+    review = re.sub(r'\s+[a-z]\s+', ' ',review)
+    review = re.sub(r'^b\s+', '', review)
+    review = re.sub(r'\s+', ' ', review)
+    D.append(review)
+    
+E = []
+for i in range(0, len(e)):
+    review = re.sub(r'\W', ' ', str(e[i]))
+    review = review.lower()
+    review = re.sub(r'^br$', ' ', review)
+    review = re.sub(r'\s+br\s+',' ',review)
+    review = re.sub(r'\s+[a-z]\s+', ' ',review)
+    review = re.sub(r'^b\s+', '', review)
+    review = re.sub(r'\s+', ' ', review)
+    review = re.sub(r'name+', ' ', review)
+    review = re.sub(r'iso+', ' ', review)
+    review = re.sub(r'\d','',review)
+    E.append(review) 
+    
+F = []
+for i in range(0, len(f)):
+    review = re.sub(r'\W', ' ', str(f[i]))
+    review = review.lower()
+    review = re.sub(r'^br$', ' ', review)
+    review = re.sub(r'\s+br\s+',' ',review)
+    review = re.sub(r'\s+[a-z]\s+', ' ',review)
+    review = re.sub(r'^b\s+', '', review)
+    review = re.sub(r'\s+', ' ', review)
+    review = re.sub(r'name+', ' ', review)
+    review = re.sub(r'^\[iso]+', ' ', review)
+    review = re.sub(r'\d','',review)
+    F.append(review) 
