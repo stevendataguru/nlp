@@ -93,7 +93,7 @@ print (metrics.accuracy_score(y_test,predictions))
 
 # Saving our classifier
 with open('classifier.pickle','wb') as f:
-    pickle.dump(classifier,f)
+    pickle.dump(logmodel,f)
     
 # Saving the Tf-Idf model
 with open('tfidfmodel.pickle','wb') as f:
